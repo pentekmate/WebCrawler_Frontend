@@ -11,21 +11,8 @@ import FilterDesktop from './FilterDesktop';
 
 
 export function ItemContainer() {
-  const{array,screenSize}=useMonitors()
-  const [scrolling, setScrolling] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setScrolling(true);
-      } else {
-        setScrolling(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [window.scrollY]);
+  const{array,screenSize,scrolling}=useMonitors()
+
 
   const [sortBy, setSortBy] = useState("input");
 

@@ -2,7 +2,6 @@ import {initializeApp} from 'firebase/app'
 function useFirebase()
 {
     const firebaseConfig = {
-        ///valami
         apiKey: process.env.REACT_APP_API_KEY,
         authDomain: process.env.REACT_APP_AUTHDOMAIN,
         projectId: process.env.REACT_APP_PROJECTID,

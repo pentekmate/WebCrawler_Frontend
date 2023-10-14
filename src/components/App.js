@@ -7,6 +7,7 @@ import { ItemContainer } from './ItemContainer';
 import { ScrollUpandDown } from './ScrollUpandDown';
 import { MonitorsProvider } from '../contexts/MonitorsContext';
 import Appcontainer from './Appcontainer';
+import Navbar from './Navbar';
 export const hibaJelzes=["törött","hibás","sérült"];
 export const joAjanlat=["helyett,HELYETT","áronalul","áron alul","ÁRON ALUL","ÚJ","új","jó ajánlat","olcsóbb","sérülésmentes","Bontatlan"]
 AOS.init();
@@ -14,7 +15,7 @@ AOS.init();
 function App() {
   return (
     <MonitorsProvider>
-      {process.env.A}
+      <Navbar></Navbar>
       <Appcontainer>
       <ScrollUpandDown></ScrollUpandDown>
       <ItemContainer></ItemContainer>

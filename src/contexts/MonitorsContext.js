@@ -7,8 +7,25 @@ function MonitorsProvider({children})
     const [screenSize,setScreenSize]=useState(getCurrentScreenSize())
     const [array,setArray]=useState([])
     const [loading,setLoading]=useState(false)
+    const [scrolling, setScrolling] = useState(false);
+
     useFirebase()
     const db=getFirestore()
+
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 300) {
+          setScrolling(true);
+        } else {
+          setScrolling(false);
+        }
+      };
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, [window.scrollY]);
+ 
     
     function getCurrentScreenSize()
     {
@@ -48,7 +65,7 @@ function MonitorsProvider({children})
     
     return(
         <MonitorsContext.Provider value={{
-            screenSize,loading,array
+            screenSize,loading,array,scrolling
         }}>
             {children}
         </MonitorsContext.Provider>
