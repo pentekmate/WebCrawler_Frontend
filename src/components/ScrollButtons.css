@@ -1,0 +1,22 @@
+.scrollbuttons-container{
+    z-index: 999;
+    width: 10%;
+    position: fixed;
+    left:90%;
+    top:80%;
+    animation: ScrollAnimation 0.5s ease-in;
+
+}
+.scrollbuttons{
+    color:#040D12;
+    width: 3rem;
+    height:3rem;
+    border-radius: 5rem;
+    background-color: #F4F4F2;
+    border: #040D12 1px solid;
+}
+
+@keyframes ScrollAnimation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }

@@ -1,0 +1,258 @@
+.App {
+  color:#040D12;
+  background-color: #F4F4F2;
+  overflow-y: hidden;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+body{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.imgDesk{
+  min-width: 100%;
+  max-width: 100%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.imgSm{
+  width:100%;
+  height:100%;
+  max-height: 452px;
+  object-fit: contain !important;
+}
+a{
+  text-decoration:none;
+  color:rgb(255, 255, 255);
+  font-size: 18px;
+}
+.results{
+  border-radius: 1rem;
+  max-height: 15rem;
+  height: 15rem;
+  background: #E8E8E8;
+}
+.results>div{
+  color:#040D12;
+  max-height: 15rem;
+  height: 15rem;
+}
+button{
+  border:none;
+  background:rgb(39, 55, 77);
+  font-weight: 600;
+  border-radius: 4px;
+  width:100%;
+  justify-content:center;
+  height: 30%;
+  color:white;
+}
+.kiemelth2{
+  color:#040D12;
+  margin:0;
+  border-top-right-radius: 1rem;
+  background-color: #E8E8E8;
+  width:25%;
+  font-size: 2rem;
+  border-right:#79AC78 0.2rem solid;
+  border-left:#79AC78 0.2rem solid;
+}
+.legfrissebb{
+  color:#040D12;
+  margin:0;
+  border-top-right-radius: 1rem;
+  width:25%;
+  border-bottom: none;
+  font-size: 2rem;
+  background-color: #E8E8E8;
+}
+.hibas{
+  color:red;
+}
+.filters{
+  background-color: #E8E8E8;
+  text-align: center;
+  border-radius: 5px;
+}
+span.price{
+  font-weight: 500;
+  font-size: 17px;
+}
+h4{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-left:0 !important;
+}
+.logo-container{
+  width: 25%;
+  height: 25%;
+  border-radius: 0.2rem;
+}
+img.hardverapro{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+img.vatera{
+  width: 70%;
+  height: 90%;
+  object-fit: contain;
+}
+div.price{
+  border-right: 0.1rem solid #BBBFCA;
+}
+div.picturebox{
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+select{
+  width: 100%;
+}
+.kiemelt{
+  background-color: #E8E8E8;
+  border-radius: 1rem;
+  border-right:0.2rem solid #79AC78;
+  border-left:0.2rem solid #79AC78
+}
+span.time{
+  font-style: italic;
+}
+.filter-button{
+  height: 3rem;
+  text-align: center;
+  color:#ffffff;
+  justify-content:center;
+}
+.filter-button>h5{
+  font-size: 1.2rem;
+  margin: 0 !important;
+  justify-content:center;
+}
+.modal-close{
+  background-color:#9DB2BF ;
+  color:black;
+  font-weight: 500;
+  height: 2rem;
+}
+.animate{
+  position: fixed;
+  z-index: 999;
+  bottom:5%;
+  right:5%;
+  animation: example 0.5s ease-in;
+}
+.filter-button-circle{
+  border-radius: 50px;
+  height: 3rem;
+  width:3rem;
+  color:#ffffff;
+  justify-content:center;
+  margin: 0 !important;
+}
+@keyframes example {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
+@media screen and (max-width: 768px) {
+  .results{
+    border-radius: 0.2rem;
+      max-height: 21rem;
+      min-height: 21rem;
+  }
+  .results>div.namebox{
+    margin-top: 1rem;
+    color:black;
+    height:2.5rem;
+  }
+  div.timebox,div.pricebox{
+    text-align: center;
+    color:black;
+    max-width: 50%;
+  }
+  div.pricebox{
+    border-right: 1px solid black;
+  }
+  div.lastbox{
+    height: 2.5rem;
+    margin: 0;
+  }
+  .results>div.picturebox{
+    padding: 0;
+  }
+  .imgSm{
+    width:100%;
+    height:100%;
+    object-fit: cover !important;
+  }
+  .time{
+    font-weight: 500;
+    font-style: italic;
+  }
+  .kiemelth2{
+    color:#040D12;
+    margin:0;
+    font-size: 2rem;
+    width:100%;
+    padding: 0 !important;
+  }
+  .legfrissebb{
+    font-size: 1.9rem !important;
+    color:#040D12;
+    margin:0;
+    font-size: 2rem;
+    width:100%;
+    padding: 0 !important;
+  }
+}
+@media (min-width:769px) and (max-width:992px) {
+
+  .results{
+    border-radius: 0.2rem;
+      min-height: 42rem;
+  }
+  .results>div.namebox{
+    color:black;
+    max-height:5rem;
+    margin:0 !important;
+  }
+  div.pricebox{
+    max-height: 2rem;
+  }
+  .results>div.picturebox{
+    min-height: 33rem;
+  }
+  h4{
+    width: 100%;
+    max-height: 50%;
+    margin:0 !important;
+    padding:0
+  }
+  .logo-container{
+    margin: 0 !important;
+    padding:0 !important;
+    width: 20%;
+    height: 20%;
+  }
+  div.price,span.price{
+    margin: 0 !important;
+  }
+
+
+  
+
+}
+
+
+
+
+
+
