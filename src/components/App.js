@@ -14,6 +14,7 @@ AOS.init();
 function App() {
   return (
     <MonitorsProvider>
+      {process.env.A}
       <Appcontainer>
       <ScrollUpandDown></ScrollUpandDown>
       <ItemContainer></ItemContainer>
