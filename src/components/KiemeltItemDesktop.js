@@ -31,8 +31,8 @@ export function KiemeltItemDesktop({ szarmhely, ar, nev, link, ido, kep }) {
           <span className='mt-1'>{ido.length === 4 ? ido : ido}</span>
         </div>
         <div className='col-lg-12 d-md-none d-lg-block'>
-          <button className='mt-5 ' type="button" value="Keresés">
-            <a target="_blank" rel="search noreferrer" href={link}>Keresés</a>
+          <button className='mt-5 ' onClick={()=>window.open(link,"blank")} type="button" value="Keresés">
+            Keresés
           </button></div>
       </div>
     </div>

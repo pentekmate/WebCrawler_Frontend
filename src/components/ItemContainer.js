@@ -63,7 +63,7 @@ export function ItemContainer() {
         <FilterMobile scroll={scrolling} scrollTo={scrollToItem} marka={marka} setMarka={setMarka} sortBy={sortBy} setSortBy={setSortBy}></FilterMobile>
         <KiemeltHirdetesekContainer screenSize={screenSize} array={array}></KiemeltHirdetesekContainer>
         <Header></Header>
-        {sorted.map((item,i) => <ItemOnSmDevices id={i} key={i} szarmhely={item.webhely} ar={item.ar} nev={item.megnevezes} link={item.ut} ido={item.ido} kep={item.kep}>
+        {sorted.map((item,i) => <ItemOnSmDevices id={i} key={i} szarmhely={item.webhely} ar={item.ar} nev={item.megnevezes} link={item.link} ido={item.ido} kep={item.kep}>
         </ItemOnSmDevices>
         )}
       </div>
@@ -75,7 +75,7 @@ export function ItemContainer() {
       <FilterDesktop sortBy={sortBy} setSortBy={setSortBy} setMarka={setMarka} marka={marka}></FilterDesktop>
       <KiemeltHirdetesekContainer screenSize={screenSize} array={array}></KiemeltHirdetesekContainer>
       <Header></Header>
-      {sorted.map((item,i) => <ItemDesktop key={i} id={i} szarmhely={item.webhely} ar={item.ar} nev={item.megnevezes} link={item.ut} ido={item.ido} kep={item.kep}>
+      {sorted.map((item,i) => <ItemDesktop key={i} id={i} szarmhely={item.webhely} ar={item.ar} nev={item.megnevezes} link={item.link} ido={item.ido} kep={item.kep}>
       </ItemDesktop>
       )}
     </div>
