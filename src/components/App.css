@@ -53,23 +53,21 @@ button{
   color:white;
 }
 .kiemelth2{
+  text-align: center;
   color:#040D12;
   margin:0;
   border-top-right-radius: 1rem;
-  background-color: #E8E8E8;
-  width:25%;
+  width:100%;
   font-size: 2rem;
-  border-right:#79AC78 0.2rem solid;
-  border-left:#79AC78 0.2rem solid;
 }
 .legfrissebb{
   color:#040D12;
   margin:0;
   border-top-right-radius: 1rem;
-  width:25%;
+  width:100%;
   border-bottom: none;
   font-size: 2rem;
-  background-color: #E8E8E8;
+  text-align: center;
 }
 .hibas{
   color:red;

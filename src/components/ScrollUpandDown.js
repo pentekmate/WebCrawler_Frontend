@@ -24,14 +24,14 @@ export function ScrollUpandDown() {
     scroller.scrollTo("filter", {
       duration: 200,
       smooth: "easeInOutQuart",
-      offset: -50, // A görgetés végénél elhelyezkedő elem pozíciója
+      offset: -50, 
     });
   }
   function scrollToItemBottom() {
     scroller.scrollTo(String(array.length - 1), {
       duration: 200,
       smooth: "easeInOutQuart",
-      offset: -50, // A görgetés végénél elhelyezkedő elem pozíciója
+      offset: -50, 
     });
   }
   const springProps = useSpring({

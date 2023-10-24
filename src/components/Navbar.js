@@ -4,7 +4,7 @@ function Navbar()
 {
     const {scrolling}=useMonitors()
     return (
-    <nav className={`navbar navbar-expand-lg ${scrolling? 'navbar-show':'navbar-top'}`}>
+    <nav className={`navbar navbar-expand-lg  d-none  d-xl-block  ${scrolling? 'navbar-show':'navbar-top'}`}>
         <div className="container-fluid d-flex justify-content-end">
             <ul className="navbar-nav">
                 <li className="nav-item">
