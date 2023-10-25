@@ -70,6 +70,7 @@ input{
     width: fit-content;
     height: fit-content;
     color:black;
+    text-align: center;
 }
 .errordiv{
     background-color: rgb(255, 111, 111);

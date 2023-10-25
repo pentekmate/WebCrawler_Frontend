@@ -17,7 +17,7 @@ AOS.init();
 function App() {
   return (
   <MonitorsProvider>
-   <BrowserRouter>
+ 
     <Routes>
       <Route path="/" element={<HomePage></HomePage>}></Route>
       <Route path="WebCrawler_Frontend" index element={<HomePage></HomePage>}></Route>
@@ -26,7 +26,7 @@ function App() {
       <Route path="/regist" element={<Register></Register>}></Route>
       <Route path="/*" element={<PagenotFount></PagenotFount>}></Route>
     </Routes>
-   </BrowserRouter>
+ 
    </MonitorsProvider>
   );
 }
