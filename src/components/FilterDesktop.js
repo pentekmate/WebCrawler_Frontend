@@ -1,7 +1,9 @@
 import React from 'react';
 import { BiFilterAlt } from "react-icons/bi";
+import { useMonitors } from '../contexts/MonitorsContext';
 
-function FilterDesktop({ sortBy, setSortBy, marka, setMarka }) {
+function FilterDesktop({ sortBy, setSortBy, marka,setMarka}) {
+
   return (
     <div className='mt-5 mb-5 pb-5 pb-5 row filters'>
       <h5 className='filtersh1'> <BiFilterAlt size={22}></BiFilterAlt> Szűrők</h5>
@@ -15,7 +17,7 @@ function FilterDesktop({ sortBy, setSortBy, marka, setMarka }) {
           </select>
         </div>
         <div className='col-lg-6 p-0'>
-          <select defaultValue={marka} onChange={(e) => setMarka(e.target.value)}>
+          <select defaultValue={marka} onChange={(e) =>setMarka(e.target.value)}>
             <option value="input">Márka kereső</option>
             <option value="HP">HP</option>
             <option value="Dell">Dell</option>

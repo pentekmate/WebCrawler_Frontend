@@ -1,0 +1,84 @@
+.reg,.log{
+    background-image: url('../imgs/bg.jpg');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    margin:0;
+    padding:0;
+}
+.registerform,.loginform{
+    background-color:rgb(238, 232, 232);
+    height:30rem;
+    width: 30rem;
+    
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+label{
+    margin-bottom: 0.1rem;
+    font-weight: 500;
+
+}
+.regbutton,.loginbutton{
+   margin-top: 1rem;
+   height: 2.8rem;
+}
+form{
+    width: 50%;
+}
+.backbutton{
+    background-color: transparent;
+    width: fit-content;
+    margin-top: 1rem;
+    height: 2.8rem;
+    color:black;
+}
+.regp,.logp{
+    margin-top:1rem
+}
+.regspan,.logspan{
+    text-decoration: underline 0.15em rgb(39, 55, 77);
+    text-underline-offset: 0.2em;
+}
+.loguser{
+    font-weight: 500;
+    margin-top: 1.2rem;
+    margin-bottom:0;
+}
+.logCreateuser{
+    text-decoration: underline 0.15em transparent;
+    transition: all 0.3s;
+    font-weight: 600;
+    margin-top: 0.2rem;
+    font-size: 1rem;
+}
+
+.logCreateuser:hover{
+    text-decoration-color: rgb(39, 55, 77);
+    text-underline-offset: 0.4em;
+}
+input{
+    border-radius: 5px;
+    border:none;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+    background-color: #ddd6d6;
+}
+.Loginregbutton{
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    color:black;
+}
+
+
+@media screen and (max-width: 768px){
+    .registerform,.loginform{
+        background-color:rgb(238, 232, 232);
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}

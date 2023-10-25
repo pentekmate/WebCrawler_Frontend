@@ -1,6 +1,10 @@
 import { createContext,useState,useEffect, useContext } from "react";
 import {getFirestore,collection,getDocs} from 'firebase/firestore'
 import { useFirebase } from "../components/FirebaseConfig";
+import { getAuth, signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+
+
 const MonitorsContext=createContext()
 function MonitorsProvider({children})
 {
@@ -8,10 +12,23 @@ function MonitorsProvider({children})
     const [array,setArray]=useState([])
     const [loading,setLoading]=useState(false)
     const [scrolling, setScrolling] = useState(false);
-
+    const [lastElement,setLastElement]=useState(array.length)
+    const [user,setUser]=useState("")
+    const [userEmail,setUserEmail]=useState("")
     useFirebase()
     const db=getFirestore()
+    const auth = getAuth();
 
+
+    function getUser(){
+      setUser(auth.currentUser)
+      if (user !== null) {
+        setUserEmail(user.email)
+      }
+    }
+    useEffect(function(){
+      getUser()
+    },[user,setUser])
     useEffect(() => {
       const handleScroll = () => {
         if (window.scrollY > 300) {
@@ -62,10 +79,11 @@ function MonitorsProvider({children})
             window.removeEventListener('resize', updateDimension);
         })
       }, [screenSize])
+
     
     return(
         <MonitorsContext.Provider value={{
-            screenSize,loading,array,scrolling
+            screenSize,loading,array,scrolling,lastElement,setLastElement,user,setUser,auth,getUser,userEmail
         }}>
             {children}
         </MonitorsContext.Provider>

@@ -5,8 +5,15 @@ import { useSpring, animated } from 'react-spring';
 import { useMonitors } from '../contexts/MonitorsContext';
 
 export function ScrollUpandDown() {
-  const{array}=useMonitors()
+  const{lastElement,setLastElement,array}=useMonitors()
+  
   const [scrolling, setScrolling] = useState(false);
+  useEffect(function(){
+    if(lastElement===0)
+    {
+      setLastElement(array.length-1)
+    }
+  },[lastElement])
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
@@ -28,7 +35,7 @@ export function ScrollUpandDown() {
     });
   }
   function scrollToItemBottom() {
-    scroller.scrollTo(String(array.length - 1), {
+    scroller.scrollTo(String(lastElement), {
       duration: 200,
       smooth: "easeInOutQuart",
       offset: -50, 

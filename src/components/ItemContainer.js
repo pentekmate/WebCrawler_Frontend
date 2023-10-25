@@ -11,18 +11,18 @@ import FilterDesktop from './FilterDesktop';
 
 
 export function ItemContainer() {
-  const{array,screenSize,scrolling}=useMonitors()
-
-
+  const{array,screenSize,scrolling,setLastElement}=useMonitors()
+  
   const [sortBy, setSortBy] = useState("input");
 
   const [marka,setMarka] = useState("input")
 
+
   function scrollToItem() {
     scroller.scrollTo("0", {
-      duration: 200, // Görgetés időtartama
-      smooth: "easeInOutQuart", // Sima görgetési stílus
-      offset: -50, // A görgetés végénél elhelyezkedő elem pozíciója
+      duration: 200, 
+      smooth: "easeInOutQuart", 
+      offset: -50,
     });
   }
   let sorted=[...array]
@@ -43,19 +43,23 @@ export function ItemContainer() {
 
   if (sortBy in sortingOptions) {
     sorted = sortingOptions[sortBy](sorted);
-   
   }
-  if (marka in sortingOptions) {
+  if (marka in sortingOptions && marka !=="input") {
     sorted = sortingOptions[marka](sorted);
-  
+    handleLast()
   }
+  function handleLast(){
+    setLastElement(()=>String(sorted.length-1))
+  }
+
  
   if(array.length===0)
   {
     return <LoadingScreen></LoadingScreen>
   }
   
-
+  
+  
   if (screenSize <= 768) {
     return (
       <div className="container">
@@ -63,7 +67,7 @@ export function ItemContainer() {
         <FilterMobile scroll={scrolling} scrollTo={scrollToItem} marka={marka} setMarka={setMarka} sortBy={sortBy} setSortBy={setSortBy}></FilterMobile>
         <KiemeltHirdetesekContainer screenSize={screenSize} array={array}></KiemeltHirdetesekContainer>
         <Header></Header>
-        {sorted.map((item,i) => <ItemOnSmDevices id={i} key={i} szarmhely={item.webhely} ar={item.ar} nev={item.megnevezes} link={item.link} ido={item.ido} kep={item.kep}>
+        {sorted.map((item,i) => <ItemOnSmDevices id={i} key={i} szarmhely={item.webhely} ar={item.ar} nev={item.megnevezes} link={item.linkeq} ido={item.ido} kep={item.kep}>
         </ItemOnSmDevices>
         )}
       </div>
@@ -72,7 +76,8 @@ export function ItemContainer() {
   }
   return (
     <div className="container">
-      <FilterDesktop sortBy={sortBy} setSortBy={setSortBy} setMarka={setMarka} marka={marka}></FilterDesktop>
+     
+      <FilterDesktop sortBy={sortBy} setSortBy={setSortBy}  marka={marka} sorted={sorted} setMarka={setMarka} ></FilterDesktop>
       <KiemeltHirdetesekContainer screenSize={screenSize} array={array}></KiemeltHirdetesekContainer>
       <Header></Header>
       {sorted.map((item,i) => <ItemDesktop key={i} id={i} szarmhely={item.webhely} ar={item.ar} nev={item.megnevezes} link={item.link} ido={item.ido} kep={item.kep}>

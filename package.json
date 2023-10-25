@@ -1,8 +1,8 @@
 {
   "name": "crawler_frontend",
-  "homepage": "https://pentekmate.github.io/WebCrawler_Frontend",
   "version": "0.1.0",
   "private": false,
+  "homepage": "https://pentekmate.github.io/WebCrawler_Frontend",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "react-loader-spinner": "^5.4.5",
+    "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
     "react-spring": "^9.7.3",
