@@ -37,11 +37,14 @@ a{
   max-height: 15rem;
   height: 15rem;
   background: #E8E8E8;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
 }
 .results>div{
   color:#040D12;
   max-height: 15rem;
   height: 15rem;
+  font-family: 'Lusitana', sans-serif;
 }
 button{
   border:none;
@@ -54,14 +57,17 @@ button{
   color:white;
 }
 .kiemelth2{
+  font-family: 'Kaisei Opti', sans-serif;
   text-align: center;
-  color:#040D12;
+  color:rgb(4, 13, 18);
   margin:0;
   border-top-right-radius: 1rem;
   width:100%;
   font-size: 2rem;
+  text-shadow: 1px 1px rgba(4, 13, 18,0.1);
 }
 .legfrissebb{
+  font-family: 'Kaisei Opti', sans-serif;
   color:#040D12;
   margin:0;
   border-top-right-radius: 1rem;
@@ -74,9 +80,11 @@ button{
   color:red;
 }
 .filters{
+
   background-color: #E8E8E8;
   text-align: center;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 span.price{
   font-weight: 500;
@@ -121,7 +129,7 @@ select{
   border-left:0.2rem solid #79AC78
 }
 span.time{
-  font-style: italic;
+ font-weight: 500;
 }
 .filter-button{
   height: 3rem;
@@ -155,6 +163,7 @@ span.time{
   justify-content:center;
   margin: 0 !important;
 }
+
 @keyframes example {
   from {opacity: 0;}
   to {opacity: 1;}
@@ -163,9 +172,10 @@ span.time{
 
 @media screen and (max-width: 768px) {
   .results{
-    border-radius: 0.2rem;
-      max-height: 21rem;
-      min-height: 21rem;
+    border-radius: 0.5rem;
+      max-height: 23rem;
+      min-height: 23rem;
+      margin-bottom:2rem;
   }
   .results>div.namebox{
     margin-top: 1rem;
@@ -176,9 +186,9 @@ span.time{
     text-align: center;
     color:black;
     max-width: 50%;
-  }
+    }
   div.pricebox{
-    border-right: 1px solid black;
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
   }
   div.lastbox{
     height: 2.5rem;
@@ -194,7 +204,6 @@ span.time{
   }
   .time{
     font-weight: 500;
-    font-style: italic;
   }
   .kiemelth2{
     color:#040D12;
@@ -233,7 +242,7 @@ span.time{
     width: 100%;
     max-height: 50%;
     margin:0 !important;
-    padding:0
+    padding:0;
   }
   .logo-container{
     margin: 0 !important;

@@ -14,10 +14,13 @@ function Register()
     const[email,setEmail]=useState("")
     const[password,setPassword]=useState("")
     const[checkErrorTimeOut,setCheckErrorTimeOut]=useState(false)
+    const[isError,setIsError]=useState(false)
+    const [errorDisplayMessage,setErrorDisplayMessage]=useState("")
     let errorMessage=""
      function handleSubmit(e){
         setCheckErrorTimeOut(true)
         if(!email || !password){
+            setErrorDisplayMessage("Üresen hagyott mezők.")
             return
         }
         e.preventDefault()
@@ -39,10 +42,11 @@ function Register()
     function checkError(){
         if(errorMessage)
         {
-            alert(errorMessage)
+           setErrorDisplayMessage(errorMessage)
+           setIsError(true)
         }
         else{
-            alert("siker")
+            navigate('/app')
         }
         setCheckErrorTimeOut(false)
         
@@ -50,6 +54,7 @@ function Register()
     const navigate= useNavigate()
     return(
         <div  className="container-fluid vh-100 flex-column  d-flex justify-content-center align-items-center reg">
+            
            <div  data-aos="fade-up" className='registerform d-flex flex-column align-items-center'>
            <form onSubmit={(e)=>handleSubmit(e)} className='d-flex flex-column justify-content-center mt-5'>
                     <label htmlFor="email">Emailcím</label>
@@ -57,7 +62,6 @@ function Register()
                     type="email"
                     id="email"
                     onChange={(e) =>{setEmail(e.target.value)}}  />
-
                     <label htmlFor="password">Jelszó</label>
                     <input
                     type='password'
@@ -79,8 +83,15 @@ function Register()
             <button onClick={(e)=>{e.preventDefault();navigate(-1)}} className='backbutton'>
               <FiArrowLeft></FiArrowLeft> Vissza
             </button>
+            {
+                isError &&
+            <div className='errordiv d-flex align-items-center'>
+               {errorDisplayMessage}
+            </div>
+            }
+          
            </div>
-      
+          
         </div>
       
     )

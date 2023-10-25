@@ -10,6 +10,7 @@ import { useMonitors } from '../contexts/MonitorsContext';
 import FilterDesktop from './FilterDesktop';
 
 
+
 export function ItemContainer() {
   const{array,screenSize,scrolling,setLastElement}=useMonitors()
   
@@ -63,7 +64,7 @@ export function ItemContainer() {
   if (screenSize <= 768) {
     return (
       <div className="container">
-        <h2 className='kiemelth2 mb-5 mt-5'>Kiemelet hírdetések</h2>
+        <h2 className='kiemelth2 mb-5 mt-5'>Kiemelt hírdetések</h2>
         <FilterMobile scroll={scrolling} scrollTo={scrollToItem} marka={marka} setMarka={setMarka} sortBy={sortBy} setSortBy={setSortBy}></FilterMobile>
         <KiemeltHirdetesekContainer screenSize={screenSize} array={array}></KiemeltHirdetesekContainer>
         <Header></Header>
@@ -75,15 +76,19 @@ export function ItemContainer() {
 
   }
   return (
-    <div className="container">
-     
+   
+
+  
+    <div className='container'>
       <FilterDesktop sortBy={sortBy} setSortBy={setSortBy}  marka={marka} sorted={sorted} setMarka={setMarka} ></FilterDesktop>
       <KiemeltHirdetesekContainer screenSize={screenSize} array={array}></KiemeltHirdetesekContainer>
       <Header></Header>
       {sorted.map((item,i) => <ItemDesktop key={i} id={i} szarmhely={item.webhely} ar={item.ar} nev={item.megnevezes} link={item.link} ido={item.ido} kep={item.kep}>
       </ItemDesktop>
       )}
-    </div>
+      </div>
+  
+ 
   );
 
 }

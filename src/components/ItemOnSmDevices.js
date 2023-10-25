@@ -20,7 +20,7 @@ export function ItemOnSmDevices({ id,ar, nev, link, ido, kep }) {
           <span className='price'>{ar.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ft</span>
         </div>
         <div className="col-sm-6  col timebox">
-          <span className='time'>{ido}</span>
+          <span className='time'>{ido!=="none"?<>{ido.length===4?ido:ido}</>:"nincs adat"}</span>
         </div>
       </div>
       

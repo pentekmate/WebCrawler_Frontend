@@ -15,7 +15,7 @@ export function KiemeltHirdetesekContainer({ screenSize,array }) {
   }
   return (
     <div className='kiemelt-containers'>
-      <h2 className='kiemelth2 mb-5'>Kiemelet hírdetések</h2>
+      <h2 className='kiemelth2 mb-5'>Kiemelt hírdetések</h2>
       {array.map((item, i) => <KiemeltItemDesktop key={i}  szarmhely={item.webhely} ar={item.ar} nev={item.megnevezes} link={item.link} ido={item.ido} kep={item.kep}></KiemeltItemDesktop>
       )}
     </div>

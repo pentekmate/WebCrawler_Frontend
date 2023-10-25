@@ -12,7 +12,7 @@ function MonitorsProvider({children})
     const [array,setArray]=useState([])
     const [loading,setLoading]=useState(false)
     const [scrolling, setScrolling] = useState(false);
-    const [lastElement,setLastElement]=useState(array.length)
+    const [lastElement,setLastElement]=useState(0)
     const [user,setUser]=useState("")
     const [userEmail,setUserEmail]=useState("")
     useFirebase()
@@ -64,6 +64,7 @@ function MonitorsProvider({children})
       }
       finally{
         setArray(data)
+        setLastElement(data.length-1)
       }
     }
     useEffect(()=>{

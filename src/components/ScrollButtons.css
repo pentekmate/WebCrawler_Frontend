@@ -5,15 +5,15 @@
     left:90%;
     top:80%;
     animation: ScrollAnimation 0.5s ease-in;
-
+   
 }
 .scrollbuttons{
-    color:#040D12;
+    color:#faf9f9;
     width: 3rem;
     height:3rem;
     border-radius: 5rem;
-    background-color: #F4F4F2;
-    border: #040D12 1px solid;
+    background-color:  #bbb9b9;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 @keyframes ScrollAnimation {

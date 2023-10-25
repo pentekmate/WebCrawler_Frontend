@@ -10,17 +10,23 @@ function LoginPage(){
    
     const[email,setEmail]=useState("")
     const [password,setPassword]=useState("")
-    const [error,setError]=useState(null)
     const[checkErrorTimeOut,setCheckErrorTimeOut]=useState(false)
-    useFirebase()
+    const{user,setUser}=useMonitors()
+    const [isError,setIsError]=useState(false)
+    const [errorDisplayMessage,setErrorDisplayMessage]=useState("")
+    let errorMessage=""
+
+
     const auth = getAuth();
     const navigate= useNavigate()
-    const{user,setUser}=useMonitors()
-    let errorMessage=""
+    useFirebase()
+
+
    async function handleSubmit(e){
         setCheckErrorTimeOut(true)
         e.preventDefault()
         if(!email || !password){
+            setErrorDisplayMessage("Üresen hagyott mezők.")
             return
         }
         await signInWithEmailAndPassword(auth, email, password)
@@ -39,10 +45,11 @@ function LoginPage(){
      function checkError(){
         if(errorMessage)
         {
-            alert(errorMessage)
+           setIsError(true)
+           setErrorDisplayMessage(errorMessage)
         }
         else{
-            alert("siker")
+           navigate('/app')
         }
         setCheckErrorTimeOut(false)
         
@@ -93,6 +100,12 @@ function LoginPage(){
          <button onClick={(e)=>{e.preventDefault();navigate(-1)}} className='backbutton'>
            <FiArrowLeft></FiArrowLeft> Vissza
          </button>
+         {
+            isError &&
+            <div className='errordiv d-flex align-items-center'>
+                {errorDisplayMessage}
+            </div>
+            }
         </div>
    
      </div>

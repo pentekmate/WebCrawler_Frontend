@@ -17,7 +17,7 @@ export function FilterMobile({scroll,scrollTo, marka, setMarka, sortBy, setSortB
   const handleShow = () => setShow(!show);
 
   return (
-    <div className='mb-3'>
+    <div className='mb-5 mb-5'>
     
      <button className='filter-button' onClick={handleShow}>
         <h5> <BiFilterAlt className='mb-1' size={"1rem"}></BiFilterAlt> Szűrők</h5>

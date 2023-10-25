@@ -5,7 +5,7 @@ export function Header() {
   const {userEmail}=useMonitors()
   return (
     <div className='container mt-5 mb-5'>
-      <h2 className='legfrissebb'>Legfrisebb hirdetések</h2>
+      <h2 className='legfrissebb'>Legfrisebb hírdetések</h2>
     </div>
   );
 }

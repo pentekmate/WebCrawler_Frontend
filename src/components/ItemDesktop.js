@@ -3,11 +3,13 @@ import { hibaJelzes } from './App';
 import hvlogo from './logo/logo.png'
 import vatlogo from './logo/logovatera.svg'
 
+
 export function ItemDesktop({id,szarmhely, ar, nev, link, ido, kep }) {
 
    
   
   return (
+   
     <div id={String(id)}  data-aos="fade-right"  data-aos-once="true" className="row p-2 mb-4 results align-items-center">
       <div className="col-lg-4 col-md-12 picturebox">
         <a target="_blank" rel="search noreferrer" href={link}>
@@ -28,7 +30,7 @@ export function ItemDesktop({id,szarmhely, ar, nev, link, ido, kep }) {
         <span className='mt-1 price'>{ar.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ft</span>
         </div>
         <div className='col-lg-6 col-md-6 d-flex justify-content-center'>
-          <span className='mt-1 time'>{ido.length===4?ido:ido}</span>
+          <span className='mt-1 time'>{ido!=="none"?<>{ido.length===4?ido:ido}</>:"nincs adat"}</span>
         </div>
         <div className='col-lg-12 d-md-none d-lg-block'>  
         <button className='mt-5 ' onClick={()=>window.open(link,"blank")} type="button" value="Keresés">
@@ -36,6 +38,7 @@ export function ItemDesktop({id,szarmhely, ar, nev, link, ido, kep }) {
         </button></div>
       </div>
     </div>
+ 
   );
 }
 

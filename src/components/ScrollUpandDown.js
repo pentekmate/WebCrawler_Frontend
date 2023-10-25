@@ -11,6 +11,7 @@ export function ScrollUpandDown() {
   useEffect(function(){
     if(lastElement===0)
     {
+     
       setLastElement(array.length-1)
     }
   },[lastElement])
