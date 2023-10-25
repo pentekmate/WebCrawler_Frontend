@@ -19,12 +19,12 @@ function App() {
   <MonitorsProvider>
    <BrowserRouter>
     <Routes>
-      <Route path="https://pentekmate.github.io/WebCrawler_Frontend/" element={<HomePage></HomePage>}></Route>
+      <Route path="/" element={<HomePage></HomePage>}></Route>
       <Route path="WebCrawler_Frontend" index element={<HomePage></HomePage>}></Route>
-      <Route path="https://pentekmate.github.io/WebCrawler_Frontend/app" element={<AppLayout></AppLayout>}></Route>
-      <Route path="https://pentekmate.github.io/WebCrawler_Frontend/login" element={<LoginPage></LoginPage>}></Route>
-      <Route path="https://pentekmate.github.io/WebCrawler_Frontend/regist" element={<Register></Register>}></Route>
-      <Route path="https://pentekmate.github.io/WebCrawler_Frontend/*" element={<PagenotFount></PagenotFount>}></Route>
+      <Route path="/app" element={<AppLayout></AppLayout>}></Route>
+      <Route path="/login" element={<LoginPage></LoginPage>}></Route>
+      <Route path="/regist" element={<Register></Register>}></Route>
+      <Route path="/*" element={<PagenotFount></PagenotFount>}></Route>
     </Routes>
    </BrowserRouter>
    </MonitorsProvider>
