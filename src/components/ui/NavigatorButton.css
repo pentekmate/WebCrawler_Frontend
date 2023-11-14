@@ -1,0 +1,16 @@
+.navigator{
+    max-width: 10%;
+    color:#E8E8E8;
+    
+}
+
+.active{
+    background:rgb(61, 95, 142);
+    
+}
+
+.navigatorButton-container{
+    display: flex;
+    align-items:center;
+    gap:5px
+}
